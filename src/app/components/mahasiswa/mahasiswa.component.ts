@@ -131,13 +131,9 @@ export class MahasiswaComponent implements OnInit { // Mendeklarasikan class kom
           console.log('Mahasiswa berhasil diperbarui:', response);
           this.getMahasiswa(); // Refresh data mahasiswa
           this.isSubmitting = false;
-  
+
           // Tutup modal edit
-          const modalElement = document.getElementById('editMahasiswaModal') as HTMLElement;
-          if (modalElement) {
-            // const modalInstance = bootstrap.Modal.getInstance(modalElement);
-            // modalInstance?.hide();
-          }
+          this.isEditModalVisible = false;
         },
         error: (err) => {
           console.error('Error updating mahasiswa:', err);
@@ -146,5 +142,4 @@ export class MahasiswaComponent implements OnInit { // Mendeklarasikan class kom
       });
     }
   }
-  
 }
